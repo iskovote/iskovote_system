@@ -38,22 +38,23 @@
 <!-- jQuery Smart Wizard -->
 <script src="{{asset("/js/jquery.smartWizard.js")}}"></script>
 
-   <!-- Datatables -->
-    <script src="{{asset("/js/jquery.dataTables.js")}}"></script>
-    <script src="{{asset("/js/dataTables.bootstrap.js")}}"></script>
-    <script src="{{asset("/js/dataTables.buttons.js")}}"></script>
-    <script src="{{asset("/js/buttons.bootstrap.js")}}"></script>
-    <script src="{{asset("/js/buttons.flash.js")}}"></script>
-    <script src="{{asset("/js/buttons.html5.js")}}"></script>
-    <script src="{{asset("/js/buttons.print.js")}}"></script>
-    <script src="{{asset("/js/dataTables.responsive.js")}}"></script>
-    <script src="{{asset("/js/responsive.bootstrap.js")}}"></script>
-    <script src="{{asset("/js/dataTables.scroller.js")}}"></script>
-    <script src="{{asset("/js/jszip.js")}}"></script>
-    <script src="{{asset("/js/pdfmake.js")}}"></script>
-    <script src="{{asset("/js/vfs_fonts.js")}}"></script>
+<!-- Datatables -->
+<script src="{{asset("/js/jquery.dataTables.js")}}"></script>
+<script src="{{asset("/js/dataTables.bootstrap.js")}}"></script>
+<script src="{{asset("/js/dataTables.buttons.js")}}"></script>
+<script src="{{asset("/js/buttons.bootstrap.js")}}"></script>
+<script src="{{asset("/js/buttons.flash.js")}}"></script>
+<script src="{{asset("/js/buttons.html5.js")}}"></script>
+<script src="{{asset("/js/buttons.print.js")}}"></script>
+<script src="{{asset("/js/dataTables.responsive.js")}}"></script>
+<script src="{{asset("/js/responsive.bootstrap.js")}}"></script>
+<script src="{{asset("/js/dataTables.scroller.js")}}"></script>
+<script src="{{asset("/js/jszip.js")}}"></script>
+<script src="{{asset("/js/pdfmake.js")}}"></script>
+<script src="{{asset("/js/vfs_fonts.js")}}"></script>
 
 <!--Custom-->
 <script type="text/javascript" src="{{asset("/js/custom.js")}}"></script>
 <script type="text/javascript" src="{{asset("/js/election.js")}}"></script>
+<script type="text/javascript" src="{{asset("/js/randompass.js")}}"></script>
 

@@ -13,9 +13,12 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::create('tbl_courses', function (Blueprint $table) {
+            $table->string('course_id', 20);
+             $table->primary('course_id');
+            $table->string('course_name', 100);
+            $table->string('org_initial', 20);
+            $table->string('org_name', 100);
         });
     }
 
@@ -26,6 +29,6 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('tbl_courses');
     }
 }

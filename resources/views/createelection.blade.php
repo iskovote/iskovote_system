@@ -175,16 +175,90 @@ Create Election
                            Please select the partylists that will be included in your election.
                         </p>
 
+                        <!--partylists data table-->
+                 <div class="x_panel">
+                  <div class="x_content">
+                       <table id="tbl_positions" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
+                        <thead>
+                          <tr class="headings">
+                            <th class="dark">
+                              <input type="checkbox" id="check-all" class="flat">
+                            </th>
+                            <th class="column-title">Partylist Name </th>
+                            <th class="bulk-actions" colspan="2">
+                              <a class="antoo" style="color:white; font-weight:500;">Partylists ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox" class="flat" name="table_records">
+                            </td>
+                            <td>SULONG Party</td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+          </div>
+          <!--/datatable-->
                       </div>
 
                       <!--STEP 4 Create Ballot-->
-                      <div id="step-4">
-                        <h3 class="StepTitle">Create Ballot</h3>
-                        <br/><br/>
+            <div id="step-4">
+              <h2 class="StepTitle">Create Ballot</h2>
+              <br/><br/>
+              <div class="container" style="height: 400px;">
+                <div class="container">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">President</a>
+                        </h4>
+                      </div>
+                      <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">  <div class="column4one">
+                         <label style="font-size: 15px; padding-left: 50px;"> Candidate #1 </label>
+                         <div style="padding-right: 350px; padding-left: 50px;  position: absolute;">
+                           <img src ="build/images/userDefault.png" style="width: 280px; height: 250px;"> 
+                        </div>
+                        <div style="padding-left: 450px">
+                          <form class="form-horizontal">
+                            <div class="form-group">
+                              <label>Student Number*</label>
+                              <input id="candidate_sn" class="form-control col-md-3" required="required" style="width: 450px"/>
+                            </div>
 
-                        </div>    
+                            <div class="form-group">
+                              <label>Candidate Name*</label>
+                              <input id="candidate_sn" class="form-control col-md-3" required="required" style="width: 450px"/>
+                            </div>
 
+                            <div class="form-group">
+                              <label>Partylist*</label>
+                              <select id="partylist" class="form-control col-md-3" required="required" style="width: 500px">
+                                <option>SULONG Party</option>
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                              <label>Biography</label>
+                              <textarea id="bio" class="form-control col-md-3" required="required" style="width: 500px"></textarea>
+                            </div>
+                          </form> 
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+                <br/>
+
+                <br/>
+                </div> 
+              </div>
 
 
                     <!-- End SmartWizard Content -->
