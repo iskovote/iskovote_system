@@ -11,26 +11,6 @@ class PagesController extends Controller
     	return view('dashboard');
     }
 
-    public function managestudents()
-    {
-    	return view('managestudents');
-    }
-
-    public function managepositions()
-    {
-    	return view('managepositions');
-    }
-
-        public function managecourses()
-    {
-    	return view('managecourses');
-    }
-
-        public function managepartylists()
-    {
-    	return view('managepartylists');
-    }
-
     public function createelection()
     {
     	return view('createelection');

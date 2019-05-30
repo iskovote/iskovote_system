@@ -16,9 +16,9 @@ Manage Students
 
               <br/><br/>
 
-              <button class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent" style="float: right;">Delete Student</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent" style="float: right;">Delete Student</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#editStudent"  style="float: right;">Edit Student Info</button>
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent" style="float: right;">Add New Student</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent" style="float: right;">Add New Student</button>
 
     <!-- Modal (add) -->
       <div id="addStudent" class="modal fade" role="dialog">
@@ -32,38 +32,40 @@ Manage Students
               </div>
 
               <div class="modal-body">
-                <form class="form-horizontal">
+                <span id="formresult"></span>
+                <form id="addform_student" class="form-horizontal" method="post">
+                  {{csrf_field()}}
                   <div class="form-group">
                           <label class="control-label col-md-3">Student Number<span class="required">*</span>
                           </label>
                           <div class="ccol-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="student_number" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="student_no" name="student_no"  required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                   <div class="form-group">
                           <label class="control-label col-md-3">Last Name <span class="required">*</span>
                           </label>
                           <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="last_name" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="lastname" name="lastname" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                   <div class="form-group">
                           <label class="control-label col-md-3">First Name <span class="required">*</span>
                           </label>
                           <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="first_name" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="firstname" name="firstname" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                   <div class="form-group">
                           <label class="control-label col-md-3">Middle Name </label>
                           <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="middle_name" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="middlename" name="middlename" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Course</label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                             <select class="form-control" id="select_courses">
+                             <select class="form-control" id="course_id" name="course_id">
                                 <option></option>
                                 <option>BSA</option>
                                 <option>BSCpE</option>
@@ -72,10 +74,10 @@ Manage Students
                               </select>
                               </div>
                             </div>
-              <div class="form-group">
+                        <div class="form-group">
                             <label class="control-label col-md-3">Year Level</label>
                             <div class="col-md-3">
-                             <select class="form-control" id="select_year">
+                             <select class="form-control" id="year" name="year">
                                 <option></option>
                                 <option>1</option>
                                 <option>2</option>
@@ -85,7 +87,7 @@ Manage Students
                               </div>
                               <label class="control-label col-md-3">Section</label>
                             <div class="col-md-3">
-                             <select class="form-control" id="select_sec">
+                             <select class="form-control" id="section" name="section">
                                 <option></option>
                                 <option>1</option>
                                 <option>2</option>
@@ -96,23 +98,23 @@ Manage Students
                             <div class="form-group">
                           <label class="control-label col-md-3">Email Address <span class="required">*</span> </label>
                           <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="emailadd" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="email_add" name="email_add" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3">Password <span class="required">*</span> </label>
                           <div class="col-md-5">
-                            <input type="text" id="input_password" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="student_pw" name="student_pw" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
                             <div class="col-md-4">
                               <button type="button" id="random_pass" class="btn btn-primary" style="float: right">Generate Random</button>
                             </div>
                         </div>
                 </form>
-              </div>
+              </div>s
 
               <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+              <button id="btn_addstudent" type="submit" class="btn btn-primary" data-dismiss="modal">Add</button>
               <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
               </div>
           </div>
@@ -138,7 +140,7 @@ Manage Students
                           <label class="control-label col-md-3">Student Number<span class="required">*</span>
                           </label>
                           <div class="ccol-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="student_number" required="required" class="form-control col-md-7 col-xs-12" disabled="disabled">
+                            <input type="text" id="edit_studno" required="required" class="form-control col-md-7 col-xs-12" disabled="disabled">
                           </div>
                         </div>
                   <div class="form-group">
@@ -205,7 +207,7 @@ Manage Students
               </div>
 
               <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
               <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
               </div>
           </div>
@@ -244,7 +246,7 @@ Manage Students
               <!--student data table-->
                  <div class="x_panel">
                   <div class="x_content">
-                       <table id="" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
+                       <table id="studenttable" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
                         <thead>
                           <tr class="headings">
                             <th class="dark">
@@ -265,61 +267,21 @@ Manage Students
                         </thead>
 
                         <tbody>
+                            @foreach($tbl_students as $student)
                           <tr>
                             <td>
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td>2014-00084-SM-0</td>
-                            <td>Mapili </td>
-                            <td>Angel Grace</td>
-                            <td>Gapasen</td>
-                            <td>BSIT</td>
-                            <td>3</td>
-                            <td>1</td>
-                            <td>agmapili@gmail.com</td>
-                          </tr>
-                             <tr>
-                            <td>
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>2018-00123-SM-0</td>
-                            <td>Dela Cruz </td>
-                            <td>Juan</td>
-                            <td>Santos</td>
-                            <td>BSA</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>juandelacruz@gmail.com</td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>2016-00157-SM-1</td>
-                            <td>Manuel </td>
-                            <td>Anna Kathleen</td>
-                            <td>Guillermo</td>
-                            <td>BSIT</td>
-                            <td>3</td>
-                            <td>1</td>
-                            <td>kathleenmanuel05@gmail.com</td>
-                          </tr>
-                         
-                         <tr>
-                            <td>
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td>2018-0001-SM-0</td>
-                            <td>Delos Reyes</td>
-                            <td>Maria</td>
-                            <td>Cruz</td>
-                            <td>BSED-MT</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>juandelacruz@gmail.com</td>
-                          </tr>
-                         
+                            <td> {{ $student -> student_no }} </td>
+                            <td> {{ $student -> lastname }} </td>
+                            <td> {{ $student -> firstname }} </td>
+                            <td> {{ $student -> middlename }} </td>
+                            <td> {{ $student -> course_id }} </td>
+                            <td> {{ $student -> year }} </td>
+                            <td> {{ $student -> section }} </td>
+                            <td> {{ $student -> email_add }} </td>
+                          </tr>   
+                             @endforeach
                         </tbody>
                       </table>
                     </div>
@@ -329,5 +291,6 @@ Manage Students
       </div>
         <!--/page content-->
 
-
 @endsection
+
+

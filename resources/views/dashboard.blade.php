@@ -6,32 +6,36 @@ Dashboard
 <!-- page content -->
 <div class="right_col" role="main">
   <!-- top tiles -->
-  <div class="row tile_count">
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-user"></i> Total Students</span>
-      <div class="count green">4</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-user"></i> Total 1st Year Students</span>
-      <div class="count green">2</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-user"></i> Total 2nd Year Students</span>
-      <div class="count green">0</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-user"></i> Total 3rd Year Students</span>
-      <div class="count green">2</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-user"></i> Total 4th Year Students</span>
-      <div class="count green">0</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-      <span class="count_top"><i class="fa fa-check-circle-o"></i> Total Ongoing Elections</span>
-      <div class="count green">0</div>
-    </div>
-  </div>
+            <div class="row top_tiles">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-user"></i></div>
+                  <div class="count green">179</div>
+                  <h3>Registered Students</h3>
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count green">9</div>
+                  <h3>Ongoing Elections</h3>
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                  <div class="count">179</div>
+                  <h3>New Sign ups</h3>
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count">179</div>
+                  <h3>New Sign ups</h3>
+                </div>
+              </div>
+            </div>
   <!-- /top tiles -->
 
 
@@ -47,20 +51,20 @@ Dashboard
 
 
   <!-- Table Dashboard -->
-  <div class="container">
+  <div class="container-db">
     <table class="table">
       <thead>
-        <tr>
-          <th class="dashboardTR" class="col-sm-1" style="text-align: center;">Rank</th>
-          <th class="col-md-12 " style="text-align: center;">President</th>
-          <th class="col-md-2" style="text-align: center;">Votes</th>
+        <tr class="dashboardTR">
+          <th class="col-sm-1 th-dashboard" style="text-align: center;">Rank</th>
+          <th class="col-md-12 th-dashboard" style="text-align: center;">President</th>
+          <th class="col-md-2 th-dashboard" style="text-align: center;">Votes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <!-- Rank 1 -->
           <td class="rank">1</td>
-          <td class = "name"><img src="images/duterte.jpg" class="img-rounded" alt="Cinque Terre">
+          <td class = "name"><img src="images/duterte.jpg" class="img-db" alt="Cinque Terre">
             <p id="name"> Rodrigo Duterte</p>
             <!--Progressbar-->
             <div id="myProgress">
@@ -71,7 +75,7 @@ Dashboard
           <tr>
             <!-- Rank 2 -->
             <td class="rank">2</td>
-            <td class = "name"><img src="images/roxas.jpeg" class="img-rounded" alt="Cinque Terre">
+            <td class = "name"><img src="images/roxas.jpeg" class="img-db" alt="Cinque Terre">
               <p id="name"> Mar Roxas</p>
               <!--Progressbar-->
               <div id="myProgress">
@@ -83,7 +87,7 @@ Dashboard
           <!-- Rank 3 -->
           <tr>
             <td class="rank">3</td>
-            <td class = "name"><img src="images/pnoy.jpg" class="img-rounded" alt="Cinque Terre">
+            <td class = "name"><img src="images/pnoy.jpg" class="img-db" alt="Cinque Terre">
               <p id="name"> Noynoy</p>
               <!--Progressbar-->
               <div id="myProgress">
@@ -98,16 +102,16 @@ Dashboard
       <div class="container">
         <table class="table">
           <thead>
-            <tr>
-              <th class="dashboardTR" class="col-sm-1" style="text-align: center;">Rank</th>
-              <th class="col-md-12 " style="text-align: center;">Vice-President</th>
-              <th class="col-md-2" style="text-align: center;">Votes</th>
+            <tr class="dashboardTR">
+              <th class="col-sm-1 th-dashboard" style="text-align: center;">Rank</th>
+              <th class="col-md-12 th-dashboard" style="text-align: center;">Vice-President</th>
+              <th class="col-md-2 th-dashboard" style="text-align: center;">Votes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="rank">1</td>
-              <td class = "name"><img src="images/binay.jpg" class="img-rounded" alt="Cinque Terre">
+              <td class = "name"><img src="images/binay.jpg" class="img-db" alt="Cinque Terre">
                 <p id="name"> Jejomar Binay</p>
                 <!--Progressbar-->
                 <div id="myProgress">
@@ -118,7 +122,7 @@ Dashboard
             </tr>
             <tr>
               <td class="rank">2</td>
-              <td class = "name"><img src="images/marcos.jpg" class="img-rounded" alt="Cinque Terre">
+              <td class = "name"><img src="images/marcos.jpg" class="img-db" alt="Cinque Terre">
                 <p id="name"> Bong Marcs</p>
                 <!--Progressbar-->
                 <div id="myProgress">

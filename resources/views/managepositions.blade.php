@@ -61,7 +61,7 @@ Manage Positions
       </div>
       <!--end of modal for add position-->
 
-      <!-- Modal (add) -->
+      <!-- Modal (edit) -->
         <div id="editPosition" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -120,13 +120,15 @@ Manage Positions
                         </thead>
 
                         <tbody>
+                          @foreach($tbl_positions as $position)
                           <tr>
                             <td>
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td>1</td>
-                            <td>President</td>
-                          </tr>
+                            <td> {{ $position -> id }} </td>
+                            <td> {{ $position -> position }} </td>
+                          </tr>   
+                             @endforeach
                          
                         </tbody>
                       </table>

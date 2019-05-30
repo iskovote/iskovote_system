@@ -21,11 +21,12 @@ $.extend({
   }
 });
 
+
 $(document).ready(function() {
     
     $("#random_pass").click(function(){
 			password = $.password(8,false);
-			$("#input_password").val(password);
+			$("#student_pw").val(password);
 
 		});
 });

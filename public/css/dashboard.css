@@ -1,0 +1,136 @@
+.container-db{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 10px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 15px -12px rgba(0, 0, 0, 0.75);
+}
+
+.dashboardLABEL {
+	margin-left: 40%;
+	color: black;	
+	font-size: 40px;
+	font-style: italic;
+
+}
+table{
+	border-top: 2px solid gray;
+	border-left: 2px solid gray;
+	border-right: 2px solid gray;
+	border-bottom:  1px solid gray;
+
+}
+.dashboardTR{
+	color: white;
+	font-size: 20px;
+	border-right:  2px solid gray;
+
+}
+td{
+	border-right: 2px solid gray;
+	border-left: 2px solid gray;
+	
+
+}
+thead .th-dashboard{
+	border-bottom: 3px solid;
+	background-color: #34495E;
+	color: white;
+	font-size: 20px;
+}
+
+.rank{
+	font-size: 30px;
+	color: black;
+	text-align: center;
+
+}
+
+.img-db{
+	size: 10%;
+	height: 30%;
+	max-height: 30%;
+	max-width: 10%;
+
+
+}
+.vote{
+	font-size: 20px;
+	color:  black;
+	text-align: center;
+	border-right: 2px solid gray;
+
+}
+
+/*Progress bar*/
+#myProgress {
+  width: 50%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 35%;
+  height: 20px;
+  background-color: green;
+}
+
+
+/*Select Election !*/
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #34495E;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #34495E;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

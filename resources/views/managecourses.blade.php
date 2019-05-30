@@ -177,23 +177,25 @@ Manage Courses
                             <th class="column-title">Organization Initial </th>
                             <th class="column-title">Organization Name </th>
                             <th class="column-title">Logo </th>
-                            <th class="bulk-actions" colspan="8">
+                            <th class="bulk-actions" colspan="6">
                               <a class="antoo" style="color:white; font-weight:500;">Courses ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                             </th>
                           </tr>
                         </thead>
 
                         <tbody>
+                           @foreach($tbl_courses as $course)
                           <tr>
                             <td>
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td>BSA</td>
-                            <td>Bachelor of Science in Accountancy</td>
-                            <td>JPIA</td>
-                            <td>Junior Philippine Institute of Accountants</td>
+                            <td> {{ $course -> course_id }} </td>
+                            <td> {{ $course -> course_name }} </td>
+                            <td> {{ $course -> org_initial }} </td>
+                            <td> {{ $course -> org_name }} </td>
                             <td></td>
-                          </tr>
+                          </tr>   
+                             @endforeach
                          
                         </tbody>
                       </table>

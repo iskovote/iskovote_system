@@ -22,12 +22,15 @@ Route::get('/asset', function () {
 
 //Routes - PagesController
 Route::get('/dashboard', 'PagesController@dashboard');
-Route::get('/manage-students', 'PagesController@managestudents');
-Route::get('/manage-positions', 'PagesController@managepositions');
-Route::get('/manage-courses', 'PagesController@managecourses');
-Route::get('/manage-partylists', 'PagesController@managepartylists');
 Route::get('/create-election', 'PagesController@createelection');
 Route::get('/view-election', 'PagesController@viewelection');
 
 //Routes - CRUD
-Route::resource('positions', 'PositionsController');
+Route::get('/manage-students', 'StudentController@index');
+Route::post('/studentadd', 'StudentController@store');
+Route::get('/manage-positions', 'PositionController@index');
+Route::post('/positionadd', 'PositionController@store');
+Route::get('/manage-courses', 'CourseController@index');
+Route::post('/coursesadd', 'CourseController@store');
+Route::get('/manage-partylists', 'PartyController@index');
+Route::post('/partyadd', 'PartyController@store');

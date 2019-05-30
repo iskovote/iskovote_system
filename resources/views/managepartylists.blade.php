@@ -112,8 +112,9 @@ Manage Partylists
                               <input type="checkbox" id="check-all" class="flat">
                             </th>
                             <th class="column-title">ID</th>
-                            <th class="column-title">Partylist Name </th>
-                            <th class="bulk-actions" colspan="3">
+                            <th class="column-title">Partylist Initial </th>
+                            <th class="column-title">Partylist Name</th>
+                            <th class="bulk-actions" colspan="4">
                               <a class="antoo" style="color:white; font-weight:500;">Partylists ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                             </th>
                           </tr>
@@ -121,15 +122,16 @@ Manage Partylists
 
                         <tbody>
 
-                          <!--foreach-->
+                           @foreach($tbl_partylists as $partylists)
                           <tr>
                             <td>
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td>1</td>
-                            <td>SULONG Party</td>
-                          </tr>
-                          
+                            <td> {{ $partylist -> party_id }} </td>
+                            <td> {{ $partylist -> party_initial }} </td>
+                            <td> {{ $partylist -> party_name }} </td>
+                          </tr>   
+                             @endforeach
 
                         </tbody>
                       </table>

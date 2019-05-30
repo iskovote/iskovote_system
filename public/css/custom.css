@@ -15,6 +15,21 @@ html , body{
  height:100%;
  }
 
+ /*Upload button*/
+ .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 90px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}   
+
 /*-----------Date Range-----------------*/
 .daterangepicker .ranges li {
     color: #73879C
@@ -1912,13 +1927,13 @@ h4.graph_title {
     height: 20px;
     color: #BAB8B8;
     position: absolute;
-    right: 53px;
-    top: 22px;
+    right: 35px;
+    top: 15px;
     z-index: 1
 }
 .tile-stats .icon i {
     margin: 0;
-    font-size: 60px;
+    font-size: 40px;
     line-height: 0;
     vertical-align: bottom;
     padding: 0
