@@ -1,4 +1,6 @@
-function create_students(){
+
+
+$(document).ready(function(){
 
 	$('#addform_student')on('submit', function(e){
 		e.preventDefault;
@@ -18,12 +20,6 @@ function create_students(){
 			}
 		});
 	});
-};
+});
 	
 
-//function call 
-
-$(document).ready(function(){
-
-		create_students();
-});

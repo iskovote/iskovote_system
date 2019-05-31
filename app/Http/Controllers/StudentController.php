@@ -36,9 +36,10 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate( $request , [
-            'student_no' => 'required',
-            'student_pw' => 'required',
+            'student_no' => 'required|min:15|max:15',
+            'student_pw' => 'required|min:8',
             'lastname' => 'required',
             'firstname' => 'required',
             'course_id' => 'required',
@@ -47,8 +48,8 @@ class StudentController extends Controller
             'email_add' => 'required'
         ]);
 
-        $tbl_students = new Student;
-
+        $tbl_students = new Student();
+        
         $tbl_students->student_no = $request->input('student_no');
         $tbl_students->student_pw = $request->input('student_pw');
         $tbl_students->lastname = $request->input('lastname');
@@ -59,6 +60,7 @@ class StudentController extends Controller
         $tbl_students->section = $request->input('section');
 
         $tbl_students->save();
+        return redirect('/manage-students')->with('success', 'Successfully Added');
 
     }
 

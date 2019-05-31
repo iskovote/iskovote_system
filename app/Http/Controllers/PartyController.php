@@ -36,7 +36,18 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate( $request,[
+            'party_initial' => 'required',
+            'party_name' => 'required',
+        ]);
+
+        $tbl_partylists = new Partylist();
+        
+        $tbl_partylists->party_initial = $request->input('party_initial');
+        $tbl_partylists->party_name = $request->input('party_name');
+
+        $tbl_partylists->save();
+        return redirect('/manage-partyists')->with('success', 'Successfully Added');
     }
 
     /**

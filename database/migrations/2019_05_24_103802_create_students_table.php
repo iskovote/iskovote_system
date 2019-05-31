@@ -21,9 +21,10 @@ class CreateStudentsTable extends Migration
             $table->string('firstname', 30);
             $table->string('middlename', 30)->nullable();
             $table->string('course_id', 20);
-            $table->integer('year')->length(1)->unsigned();;
-            $table->integer('section')->length(1)->unsigned();;
+            $table->integer('year')->length(1)->unsigned();
+            $table->integer('section')->length(1)->unsigned();
             $table->string('email_add');
+            $table->timestamps();
 
             $table->foreign('course_id')
                 ->references('course_id')

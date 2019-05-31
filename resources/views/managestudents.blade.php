@@ -13,6 +13,22 @@ Manage Students
                 <h3>Manage Students</h3>
               </div>
             </div>
+            
+              @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                  <ul>
+                    @foreach($errors->all as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+
+                @if(\Session::has('Success'))
+                  <div class="alert alert-sucess">
+                    <p>{{\Session::get('success')}}</p>
+                  </div>
+                @endif
 
               <br/><br/>
 
@@ -32,8 +48,7 @@ Manage Students
               </div>
 
               <div class="modal-body">
-                <span id="formresult"></span>
-                <form id="addform_student" class="form-horizontal" method="post">
+                <form id="addform_student" class="form-horizontal" method="POST" action="{{action('StudentController@store')}}" >
                   {{csrf_field()}}
                   <div class="form-group">
                           <label class="control-label col-md-3">Student Number<span class="required">*</span>
@@ -114,7 +129,7 @@ Manage Students
               </div>s
 
               <div class="modal-footer">
-              <button id="btn_addstudent" type="submit" class="btn btn-primary" data-dismiss="modal">Add</button>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
               <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
               </div>
           </div>
