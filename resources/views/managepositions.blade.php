@@ -23,7 +23,6 @@ Manage Positions
     <!-- Modal (add) -->
     <div id="addPosition" class="modal fade" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -31,111 +30,100 @@ Manage Positions
             <h4 class="modal-title">Add Position</h4>
           </div>
 
-          <div class="modal-body">
-            <form class="form-horizontal">
+          <form id="frmAddPos" class="form-horizontal" autocomplete="off" action="/manage-positions" method="POST">
+            {{ csrf_field() }}
+            <div class="modal-body">
               <div class="form-group">
-                <label class="control-label col-md-3">ID<span class="required">*</span>
+                <label class="control-label col-md-3">Position<span class="required">*</span>
                 </label>
                 <div class="ccol-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="positionID" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="position" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Position <span class="required">*</span>
-                </label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="position" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-              
-            </form>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
-            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="btnSaveParty" id="btnSavePos" class="btn btn-primary">Save</button>
+            </div>
+          </form>
         </div>
-
       </div>
     </div>
     <!--end of modal for add position-->
 
-    <!-- Modal (edit) -->
-    <div id="editPosition" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Edit Position</h4>
-          </div>
-
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label class="control-label col-md-3">ID<span class="required">*</span>
-                </label>
-                <div class="ccol-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="positionID" disabled="disabled" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Position <span class="required">*</span>
-                </label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="position" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-              
-            </form>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
-            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-          </div>
+  <!-- Modal (edit) -->
+  <div id="editPosition" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Position</h4>
         </div>
-
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-md-3">ID<span class="required">*</span>
+              </label>
+              <div class="ccol-md-9 col-sm-9 col-xs-12">
+                <input type="text" id="positionID" disabled="disabled" required="required" class="form-control col-md-7 col-xs-12">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-3">Position <span class="required">*</span>
+              </label>
+              <div class="col-md-9 col-sm-9 col-xs-12">
+                <input type="text" id="position" required="required" class="form-control col-md-7 col-xs-12">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+        </div>
       </div>
-    </div>
-    <!--end of modal for add student-->
 
-    <!--position data table-->
-    <div class="x_panel">
-      <div class="x_content">
-       <table id="tbl_positions" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
-        <thead>
-          <tr class="headings">
-            <th class="dark">
-              <input type="checkbox" id="check-all" class="flat">
-            </th>
-            <th class="column-title">ID</th>
-            <th class="column-title">Position </th>
-            <th class="bulk-actions" colspan="2">
-              <a class="antoo" style="color:white; font-weight:500;">Positions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          @foreach($tbl_positions as $position)
-          <tr>
-            <td>
-              <input type="checkbox" class="flat" name="table_records">
-            </td>
-            <td> {{ $position -> p_id }} </td>
-            <td> {{ $position -> position }} </td>
-          </tr>   
-          @endforeach
-          
-        </tbody>
-      </table>
     </div>
   </div>
-  <!--/datatable-->
+  <!--end of modal for add student-->
 
+  <!--position data table-->
+  <div class="x_panel">
+    <div class="x_content">
+     <table id="tbl_positions" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
+      <thead>
+        <tr class="headings">
+          <th class="dark">
+            <input type="checkbox" id="check-all" class="flat">
+          </th>
+          <th class="column-title">ID</th>
+          <th class="column-title">Position </th>
+          <th class="bulk-actions" colspan="2">
+            <a class="antoo" style="color:white; font-weight:500;">Positions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @foreach($tbl_positions as $position)
+        <tr>
+          <td>
+            <input type="checkbox" class="flat" name="table_records">
+          </td>
+          <td> {{ $position -> p_id }} </td>
+          <td> {{ $position -> position }} </td>
+        </tr>   
+        @endforeach
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--/datatable-->
+      </div>
+    </div>
+  </div>
 
 </div>
 </div>

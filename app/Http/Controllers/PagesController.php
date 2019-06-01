@@ -20,4 +20,9 @@ class PagesController extends Controller
     {
     	return view('viewelection');
     }
+
+    public function sample()
+    {
+        return view('sample');
+    }
 }

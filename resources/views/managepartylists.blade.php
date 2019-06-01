@@ -29,27 +29,27 @@ Manage Partylists
             <h4 class="modal-title">Add Partylist</h4>
           </div>
 
-          <form id="frmAddParty" class="form-horizontal" action="{{route('manage-partylists.store')}}" method="POST">
+          <form id="frmAddParty" class="form-horizontal" autocomplete="off" action="/manage-partylists" method="POST">
             {{ csrf_field() }}
             <div class="modal-body">
               <div class="form-group">
                 <label class="control-label col-md-3">Partylist Initial<span class="required">*</span>
                 </label>
                 <div class="ccol-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="party_initial" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="party_initial" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-md-3">Partylist Name <span class="required">*</span>
+                <label class="control-label col-md-3">Partylist Name<span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="party_name" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="party_name" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" name="btnSaveParty" id="btnSavePos" class="btn btn-primary" data-dismiss="modal" value="Save"/>
               <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="btnSaveParty" id="btnSavePos" class="btn btn-primary">Save</button>
             </div>
           </form>
         </div>

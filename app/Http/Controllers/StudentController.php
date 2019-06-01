@@ -58,6 +58,7 @@ class StudentController extends Controller
         $tbl_students->course_id = $request->input('course_id');
         $tbl_students->year = $request->input('year');
         $tbl_students->section = $request->input('section');
+        $tbl_students->email_add = $request->input('email_add');
 
         $tbl_students->save();
         return redirect('/manage-students')->with('success', 'Successfully Added');

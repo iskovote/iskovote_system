@@ -37,9 +37,10 @@ class PositionController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate( $request , [
+        
+        /*$this->validate( $request , [
             'position' => 'required'
-        ]);
+        ]);*/
 
         $tbl_positions = new Position;
 
@@ -47,7 +48,7 @@ class PositionController extends Controller
 
         $tbl_positions->save();
 
-        return redirect('manage-positions')->with('success', 'Successfully Added');
+        return redirect('/manage-positions')->with('success', 'Successfully Added');
     }
 
     /**

@@ -223,16 +223,17 @@ Create Election
                   <div class="panel-body">  <div class="column4one">
                    <label style="font-size: 15px; padding-left: 40px;"> Candidate #1 </label>
                    <div style="padding-right: 350px; padding-left: 50px;  position: absolute;">
-                     <!-- <img src ="images/userDefault.png" style="width: 280px; height: 250px;">  -->
-                     <div class = "Position1" style=" padding-right: 220px;">
+                     <div class = "Position1" style=" padding-right: 200px;">
                       <form style="border-bottom: 0px ">
                        <div class="container">
                         <div class="row">
                           <div class="column">
                             <div class="upload-btn-wrapper">
-                              <img src = "" style="display:none; background-size: cover;" height="260" width="260" id = "presC1" border="10">
-                              <button class="btn">Upload Photo</button>
-                              <input type="file" onchange="presImageC1.call(this)"/>
+                              <br/>
+                              <img src = "images/userDefault.png" style="display:initial; background-size: cover;" height="220" width="220" id = "pres" border="10">
+                              <br/>
+                              <button class="btn" style="display: none;">Upload Photo</button>
+                              <input type="file" onchange="presImage.call(this)"/>
                             </div>
                           </div>
                         </div>
@@ -268,57 +269,9 @@ Create Election
                 </div>
               </div>
             </div>
-            <div class="panel-body">  <div class="column4one">
-             <label style="font-size: 15px; padding-left: 40px;"> Candidate #2 </label>
-             <div style="padding-right: 350px; padding-left: 50px;  position: absolute;">
-               <!-- <img src ="images/userDefault.png" style="width: 280px; height: 250px;">  -->
-               <div class = "Position1" style=" padding-right: 220px;">
-                <form style="border-bottom: 0px ">
-                 <div class="container">
-                  <div class="row">
-                    <div class="column">
-                      <div class="upload-btn-wrapper">
-                        <img src = "" style="display:none; background-size: cover;" height="260" width="260" id = "presC2" border="10">
-                        <button class="btn">Upload Photo</button>
-                        <input type="file" onchange="presImageC2.call(this)"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div style="padding-left: 450px">
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label>Student Number*</label>
-                <input id="candidate_sn" class="form-control col-md-3" required="required" style="width: 450px"/>
-              </div>
-
-              <div class="form-group">
-                <label>Candidate Name*</label>
-                <input id="candidate_sn" class="form-control col-md-3" required="required" style="width: 450px"/>
-              </div>
-
-              <div class="form-group">
-                <label>Partylist*</label>
-                <select id="partylist" class="form-control col-md-3" required="required" style="width: 500px">
-                  <option>ELITE Party</option>
-                  <option>KASAR1NLAN</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Biography</label>
-                <textarea id="bio" class="form-control col-md-3" required="required" style="width: 500px"></textarea>
-              </div>
-            </form> 
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <br/>
+        <br/>
 </div> 
 </div>
 

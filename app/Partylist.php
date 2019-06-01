@@ -11,4 +11,6 @@ class Partylist extends Model
     	"party_inital",
     	"party_name"
     ];
+    protected $primarykey = 'party_id';
+    public $timestamps = false;
 }

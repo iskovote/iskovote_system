@@ -47,7 +47,7 @@ class PartyController extends Controller
         $tbl_partylists->party_name = $request->input('party_name');
 
         $tbl_partylists->save();
-        return redirect('/manage-partyists')->with('success', 'Successfully Added');
+        return redirect('/manage-partylists')->with('success', 'Successfully Added');
     }
 
     /**

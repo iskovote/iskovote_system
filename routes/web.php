@@ -24,7 +24,7 @@ Route::get('/asset', function () {
 Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/create-election', 'PagesController@createelection');
 Route::get('/view-election', 'PagesController@viewelection');
-
+Route::get('/sample', 'PagesController@sample');
 ///////Routes - CRUD//////////////////////////////
 
 
