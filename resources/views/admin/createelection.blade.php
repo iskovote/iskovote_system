@@ -83,7 +83,9 @@ Create Election
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <select id="select_org" class="form-control col-md-3" required="required">
-                      <option id="option_org"></option>
+                      <option id="option_org">BSA</option>
+                      <option>BSIT</option>
+                      <option>BSCpE</option>
                     </select>                            
                   </div>
                 </div>

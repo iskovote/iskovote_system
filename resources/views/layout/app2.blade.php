@@ -8,8 +8,8 @@
 <body class="nav-md">
 	
     		
-@section('admin.navbar')
-	@include('admin.navbar')
+@section('user.navbar2')
+	@include('user.navbar2')
 @show
 
 

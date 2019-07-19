@@ -8,21 +8,41 @@ class PagesController extends Controller
 {
     public function dashboard()
     {
-    	return view('dashboard');
+    	return view('admin.dashboard');
     }
 
     public function createelection()
     {
-    	return view('createelection');
+    	return view('admin.createelection');
     }
 
-    public function viewelection()
+    public function archive()
     {
-    	return view('viewelection');
+    	return view('admin.viewelection');
     }
 
-    public function sample()
+    public function home()
     {
-        return view('sample');
+        return view('user.home');
+    }
+
+     public function org()
+    {
+        return view('admin.manageorg');
+    }
+
+    public function login()
+    {
+        return view('layout.login');
+    }
+
+    public function editelection()
+    {
+        return view('admin.editelection');
+    }
+
+    public function help_a()
+    {
+        return view('admin.adminhelp');
     }
 }

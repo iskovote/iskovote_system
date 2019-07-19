@@ -14,27 +14,12 @@ Manage Students
       </div>
     </div>
 
-    <div class="container">
-    @if(count($errors) > 0)
-    <div class="alert alert-danger">
-      <ul>
-        @foreach($errors->all as $error)
-        <li>{{$error}}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
-
-    @if(\Session::has('Success'))
-    <div class="alert alert-sucess">
-      <p>{{\Session::get('success')}}</p>
-    </div>
-    @endif
-  </div>
+    <br/><br/>
 
     <button class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent" style="float: right;">Delete Student</button>
     <button class="btn btn-primary" data-toggle="modal" data-target="#editStudent"  style="float: right;">Edit Student Info</button>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent" style="float: right;">Add New Student</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#importStudent" style="float: right;">Import</button>
 
     <!-- Modal (add) -->
     <div id="addStudent" class="modal fade" role="dialog">
@@ -61,20 +46,20 @@ Manage Students
                 <label class="control-label col-md-3">Last Name <span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" name="lastname" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="lastname" autocomplete="off" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3">First Name <span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" name="firstname" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="firstname"autocomplete="off"  required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3">Middle Name </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" name="middlename" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="middlename" autocomplete="off" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
@@ -255,6 +240,43 @@ Manage Students
   </div>
 </div>
 <!--end of modal for delete student-->
+
+<!-- Modal (import) -->
+<div id="importStudent" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Import Students</h4>
+      </div>
+
+      <div class="modal-body">
+        <p><b><h4>1. Read import instructions</h4></b></p>
+        <p>To get started, <a href="">click here </a>to read the instructions on how to import voters.</p>
+        <p><b><h4>2. Download the import template</h4></b></p>
+        <p><a href="">Click here</a> to download the voter import template and add one voter per row. The columns in your spreadsheet must exactly match the import template or the import will fail.</p>
+        <p><b><h4>3. Select the import file from your computer</h4></b></p>
+        <p><form class="form-horizontal" action="" method="post" name="uploadCSV"
+    enctype="multipart/form-data">
+    <div class="input-row">
+       <input type="file" name="file" id="file" accept=".csv">
+        <br />
+
+    </div>
+    <div id="labelError"></div>
+</form></p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Import</button>
+        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--end of modal for impoort student-->
 
 <br/><br/>
 

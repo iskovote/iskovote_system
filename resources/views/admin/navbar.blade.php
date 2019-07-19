@@ -32,9 +32,11 @@
             </ul>
             <h3>Manage</h3>
             <ul class="nav side-menu">
-              <li><a href="/manage-students"><i class="fa fa-user"></i> Students</a>
-              </li>
               <li><a href="/manage-courses"><i class="fa fa-book"></i> Courses</a>
+              </li>
+              <li><a href="/manage-org"><i class="fa fa-book"></i> Organizations</a>
+              </li>
+              <li><a href="/manage-students"><i class="fa fa-user"></i> Students</a>
               </li>
               <li><a href="/manage-positions"><i class="fa fa-black-tie"></i> Positions</a>
               </li>
@@ -46,7 +48,9 @@
             <ul class="nav side-menu">
               <li><a href="/create-election"><i class="fa fa-edit"></i> Create Election</a>
               </li>
-              <li><a href="/view-election"><i class="fa fa-eye"></i>View Election </a>
+              <li><a href="/edit-election"><i class="fa fa-edit"></i> Edit Election</a>
+              </li>
+              <li><a href="/election-archive"><i class="fa fa-eye"></i>Election Archive </a>
               </li>
             </ul>
           </div>
@@ -71,9 +75,9 @@
               </a>
 
               <ul class="dropdown-menu dropdown-usermenu pull-right">
-                <li><a href=""> Settings</a></li>
-                <li><a href="">Help</a></li>
-                <li><a href=""><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
+                <li><a href="">Account</a></li>
+                <li><a href="/help">Help</a></li>
+                <li><a href="/login"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
               </ul>
 
             </li>

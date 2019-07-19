@@ -15,7 +15,7 @@ class PositionController extends Controller
     public function index()
     {
         $tbl_positions = Position::all();
-        return view('managepositions')->with('tbl_positions', $tbl_positions);
+        return view('admin.managepositions')->with('tbl_positions', $tbl_positions);
     }
 
     /**

@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
 	$('#addform_student')on('submit', function(e){
@@ -7,7 +5,7 @@ $(document).ready(function(){
 
 		$ajax({
 			type: "POST",
-			url: "/studentadd",
+			url: "managestudents",
 			data: $('#addform_student').serialize(),
 			success: function(response){
 				console.log(response)

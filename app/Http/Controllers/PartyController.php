@@ -15,7 +15,7 @@ class PartyController extends Controller
     public function index()
     {
         $tbl_partylists = Partylist::all();
-        return view('managepartylists')->with('tbl_partylists', $tbl_partylists);
+        return view('admin.managepartylists')->with('tbl_partylists', $tbl_partylists);
     }
 
     /**

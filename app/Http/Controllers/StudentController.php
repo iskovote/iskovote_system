@@ -15,7 +15,7 @@ class StudentController extends Controller
     public function index()
     {
         $tbl_students = Student::all();
-        return view('managestudents')->with('tbl_students', $tbl_students);
+        return view('admin.managestudents')->with('tbl_students', $tbl_students);
     }
 
     /**

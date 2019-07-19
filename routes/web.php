@@ -22,9 +22,14 @@ Route::get('/asset', function () {
 
 ////////Routes - PagesController//////////////////
 Route::get('/dashboard', 'PagesController@dashboard');
+Route::get('/home', 'PagesController@home');
 Route::get('/create-election', 'PagesController@createelection');
-Route::get('/view-election', 'PagesController@viewelection');
+Route::get('/election-archive', 'PagesController@archive');
 Route::get('/sample', 'PagesController@sample');
+Route::get('/manage-org', 'PagesController@org');
+Route::get('/login', 'PagesController@login');
+Route::get('/edit-election', 'PagesController@editelection');
+Route::get('/help', 'PagesController@help_a');
 ///////Routes - CRUD//////////////////////////////
 
 

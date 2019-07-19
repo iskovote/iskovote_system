@@ -14,7 +14,7 @@ class CourseController extends Controller
     public function index()
     {
         $tbl_courses = Course::all();
-        return view('managecourses')->with('tbl_courses', $tbl_courses);
+        return view('admin.managecourses')->with('tbl_courses', $tbl_courses);
     }
 
     /**
@@ -35,7 +35,16 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $tbl_courses = new Course();
+        
+        $tbl_courses->course_id = $request->input('course_id');
+        $tbl_courses->course_name = $request->input('course_name');
+        $tbl_courses->org_initial = $request->input('org_initial');
+        $tbl_courses->org_name = $request->input('org_name');
+
+        $tbl_courses->save();
+        return redirect('/manage-courses')->with('success', 'Successfully Added');
     }
 
     /**

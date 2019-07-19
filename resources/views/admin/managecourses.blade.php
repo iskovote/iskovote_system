@@ -28,40 +28,29 @@ Manage Courses
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Add Course</h4>
           </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
+          <form class="form-horizontal" autocomplete="off" action="/manage-courses" method="POST">
+            {{ csrf_field() }}
+            <div class="modal-body">
               <div class="form-group">
                 <label class="control-label col-md-3">ID<span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="courseID" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="course_id" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3">Course Name<span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="course_name" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="course_name" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Org Initial<span class="required">*</span> </label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="org_initial" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Org Name<span class="required">*</span></label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="org_name" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
-            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -76,40 +65,28 @@ Manage Courses
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Edit Course</h4>
           </div>
+          <form class="form-horizontal">
           <div class="modal-body">
-            <form class="form-horizontal">
               <div class="form-group">
                 <label class="control-label col-md-3">ID<span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="courseID" disabled="disabled" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="course_id" disabled="disabled" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-md-3">Course Name<span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="course_name" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="course_name" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Org Initial <span class="required">*</span></label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="org_initial" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-md-3">Org Name<span class="required">*</span></label>
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" id="org_name" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
-            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+              <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -136,7 +113,7 @@ Manage Courses
     </div>
     <!--end of modal for delete course-->
 
-    <!--student data table-->
+    <!--course data table-->
     <div class="x_panel">
       <div class="x_content">
         <table id="tbl_courses" class="table table-striped jambo_table table-bordered bulk_action datatable-checkbox" cellspacing="0" width="100%">
@@ -147,10 +124,7 @@ Manage Courses
               </th>
               <th class="column-title">ID</th>
               <th class="column-title">Course Name </th>
-              <th class="column-title">Organization Initial </th>
-              <th class="column-title">Organization Name </th>
-              <th class="column-title">Logo </th>
-              <th class="bulk-actions" colspan="6">
+              <th class="bulk-actions" colspan="5">
                 <a class="antoo" style="color:white; font-weight:500;">Courses ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
               </th>
             </tr>
@@ -165,9 +139,6 @@ Manage Courses
               </td>
               <td> {{ $course -> course_id }} </td>
               <td> {{ $course -> course_name }} </td>
-              <td> {{ $course -> org_initial }} </td>
-              <td> {{ $course -> org_name }} </td>
-              <td></td>
             </tr>
             @endforeach
 
