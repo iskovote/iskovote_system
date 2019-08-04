@@ -26,7 +26,7 @@
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
           <div class="menu_section">
             <ul class="nav side-menu">
-              <li><a href="/dashboard"><i class="fa fa-home"></i> Home</a>
+              <li><a href="/home"><i class="fa fa-home"></i> Home</a>
               </li>
               <li><a href="/dashboard"><i class="fa fa-eye"></i> View Election Results</a>
               </li>

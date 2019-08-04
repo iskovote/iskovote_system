@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Org extends Model
 {
-    protected $table = 'tbl_courses';
+    protected $table = 'tbl_orgs';
     protected $fillable = [
-    	"course_name"
+    	'org_name',
+    	'org_logo'
     ];
-    protected $primarykey = 'course_id';
+    protected $primarykey = 'org_id';
     public $timestamps = false;
 }

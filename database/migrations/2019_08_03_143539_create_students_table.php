@@ -13,7 +13,7 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_students', function (Blueprint $table) {
+       Schema::create('tbl_students', function (Blueprint $table) {
             $table->string('student_no', 15);
             $table->primary('student_no');
             $table->text('student_pw', 20);

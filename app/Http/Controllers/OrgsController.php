@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
-class CourseController extends Controller
+use App\Org;
+
+class OrgsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $tbl_courses = Course::all();
-        return view('admin.managecourses')->with('tbl_courses', $tbl_courses);
+        $tbl_orgs = Org::all();
+        return view('admin.manageorg')->with('tbl_orgs', $tbl_orgs);
     }
 
     /**
@@ -35,15 +36,30 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-
-        $tbl_courses = new Course();
+        $tbl_orgs = new Org();
         
-        $tbl_courses->course_id = $request->input('course_id');
-        $tbl_courses->course_name = $request->input('course_name');
+        $tbl_orgs->org_id = $request->input('org_id');
+        $tbl_orgs->org_name = $request->input('org_name');
+        //$tbl_orgs->org_logo = $request->input('org_logo');
+        $tbl_orgs->course_id = $request->input('course_id');
 
 
-        $tbl_courses->save();
-        return redirect('/manage-courses')->with('success', 'Successfully Added');
+        
+        if($request->hasfile('org_logo')) {
+            $file->$request->file('org_logo');
+            $extension = $file->getClientOriginalExtension(); //getting image extension
+            $filename =  time() .'.' . $extension;
+            $file->move('/images/logo/', $filename);
+            $tbl_orgs->org_logo=$filename;
+        }
+        else {
+            return $request;
+            $tbl_orgs->org_logo= '';
+        }
+
+        $tbl_orgs->save();
+        return redirect('/manage-org')->with('success', 'Successfully Added');
+        
     }
 
     /**
@@ -90,4 +106,5 @@ class CourseController extends Controller
     {
         //
     }
+
 }

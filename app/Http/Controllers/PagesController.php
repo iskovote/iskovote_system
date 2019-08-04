@@ -26,11 +26,6 @@ class PagesController extends Controller
         return view('user.home');
     }
 
-     public function org()
-    {
-        return view('admin.manageorg');
-    }
-
     public function login()
     {
         return view('layout.login');

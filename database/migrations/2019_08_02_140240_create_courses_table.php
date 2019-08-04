@@ -17,8 +17,6 @@ class CreateCoursesTable extends Migration
             $table->string('course_id', 20);
              $table->primary('course_id');
             $table->string('course_name', 100);
-            $table->string('org_initial', 20);
-            $table->string('org_name', 100);
         });
     }
 

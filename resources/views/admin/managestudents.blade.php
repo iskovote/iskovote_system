@@ -72,8 +72,8 @@ Manage Students
                   <option>BSED-MT</option>
                   <option>BSIT</option>
                 </select>
+                </div>
               </div>
-            </div>
             <div class="form-group">
               <label class="control-label col-md-3">Year Level <span class="required">*</span></label>
               <div class="col-md-3">
