@@ -14,8 +14,8 @@ class CreatePositionsTable extends Migration
     public function up()
     {
         Schema::create('tbl_positions', function (Blueprint $table) {
-            $table->Increments('p_id');
-            $table->string('position');
+            $table->Increments('p_id', 5);
+            $table->string('position', 50);
         });
     }
 

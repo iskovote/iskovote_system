@@ -14,7 +14,7 @@ class CreatePartylistsTable extends Migration
     public function up()
     {
         Schema::create('tbl_partylists', function (Blueprint $table) {
-            $table->Increments('party_id');
+            $table->Increments('party_id', 10);
             $table->string('party_initial');
             $table->string('party_name');
         });
