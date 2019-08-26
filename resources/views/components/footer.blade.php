@@ -53,9 +53,13 @@
 <script src="{{asset("/js/pdfmake.js")}}"></script>
 <script src="{{asset("/js/vfs_fonts.js")}}"></script>
 
+<!--Validator-->
+<!--<script type="text/javascript" src="{{asset("/js/validator.js")}}"></script>-->
+
 <!--Custom-->
 <script type="text/javascript" src="{{asset("/js/custom.js")}}"></script>
 <script type="text/javascript" src="{{asset("/js/election.js")}}"></script>
 <script type="text/javascript" src="{{asset("/js/randompass.js")}}"></script>
 <script type="text/javascript" src="{{asset("/js/upload.js")}}"></script>
-<script type="text/javascript" src="{{asset("/js/create.js")}}"></script>
+<script type="text/javascript" src="{{asset("/js/jQuery.inputmask.bundle.min.js")}}"></script>
+<!--<script type="text/javascript" src="{{asset("/js/create.js")}}"></script>-->

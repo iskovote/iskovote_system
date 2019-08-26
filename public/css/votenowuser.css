@@ -1,0 +1,97 @@
+dd{
+  font-size: 13px;
+  justify-content: center;
+  color: green;
+}
+h2{
+  text-align: center;
+}
+a{
+  opacity: 50%;
+}
+
+.my-container{
+  margin-top: 50px;
+}
+.my-row{
+  border: 2px solid black;
+  height: 300px;
+  justify-content: center;]
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.my-col{
+  margin: 5px;
+  height: 250px;
+   border-radius: 20px 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 50px;
+   flex: 1 0 18%;
+}
+
+#my-image{
+  border-radius: 15px 15px;
+  max-height: 250px;
+  max-width: 200px;
+
+}
+#my-name.label{
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  top: 230px;
+ 
+}
+
+
+.checkbox-container{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 260px;
+
+}
+.checkbox-container #my-vote{
+  cursor: pointer;
+  display: flex;
+}
+.checkbox-container input[type ='checkbox']{
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+
+}
+.checkbox-container #my-vote::before{
+  content: '';
+  width: 2em;
+  height: 2em;
+  border-radius: .15em;
+  margin-right: .5em;
+  border: .05em solid black;
+
+}
+.checkbox-container #my-vote:hover::before,
+.checkbox-container input[type='checkbox']:hover + #my-vote::before{
+  background-color:  #35E07D;
+
+}
+.checkbox-container input[type='checkbox']:focus + #my-vote::before{
+  box-shadow: 0 0 20px black;
+}
+.checkbox-container input[type = 'checkbox']:checked + #my-vote::before{
+  background-color: #27AE60;
+  content: '\002714';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+

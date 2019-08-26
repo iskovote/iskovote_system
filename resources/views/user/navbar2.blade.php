@@ -28,7 +28,7 @@
             <ul class="nav side-menu">
               <li><a href="/home"><i class="fa fa-home"></i> Home</a>
               </li>
-              <li><a href="/dashboard"><i class="fa fa-eye"></i> View Election Results</a>
+              <li><a href="/view-election"><i class="fa fa-eye"></i> View Election Results</a>
               </li>
             </ul>
               </li>
@@ -55,9 +55,9 @@
               </a>
 
               <ul class="dropdown-menu dropdown-usermenu pull-right">
-                <li><a href=""> Password</a></li>
-                <li><a href="">Help</a></li>
-                <li><a href=""><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
+                <li><a href="/changepass"> Password</a></li>
+                <li><a href="/helpuser">Help</a></li>
+                <li><a href="/"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
               </ul>
 
             </li>

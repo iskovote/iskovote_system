@@ -15,9 +15,10 @@ Manage Courses
     <br/><br/>
 
     <!--Buttons(add, edit, delete)-->
-    <button id="delete_course" data-toggle="modal" data-target="#deleteCourse" class="btn btn-danger" style="float: right;">Delete Course</button>
-    <button id="edit_course" data-toggle="modal" data-target="#editCourse" class="btn btn-primary" style="float: right;">Edit Course</button>
-    <button id="add_course" data-toggle="modal" data-target="#addCourse" class="btn btn-success" style="float: right;">Add Course</button>
+    <button name="delete_course" type="submit" class="btn btn-danger" style="float: right;">Delete Course</button>
+    <button name="edit_course" data-toggle="modal" data-target="#editCourse" class="btn btn-primary" style="float: right;">Edit Course</button>
+    <button name="add_course" data-toggle="modal" data-target="#addCourse" class="btn btn-success" style="float: right;">Add Course</button>
+
 
     <!-- Modal (add) -->
     <div id="addCourse" class="modal fade" role="dialog">
@@ -92,27 +93,6 @@ Manage Courses
     </div>
     <!--end of modal for edit course-->
 
-    <!-- Modal (delete) -->
-    <div id="deleteCourse" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Delete Course?</h4>
-          </div>
-          <div class="modal-body">
-            <p> Are you sure you want to delete this Record? </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--end of modal for delete course-->
-
     <!--course data table-->
     <div class="x_panel">
       <div class="x_content">
@@ -120,7 +100,7 @@ Manage Courses
           <thead>
             <tr class="headings">
               <th class="dark">
-                <input type="checkbox" id="check-all" class="flat">
+                <input type="checkbox" name="checkall_course" class="flat">
               </th>
               <th class="column-title">ID</th>
               <th class="column-title">Course Name </th>
@@ -135,7 +115,7 @@ Manage Courses
             @foreach($tbl_courses as $course)
             <tr>
               <td>
-                <input type="checkbox" class="flat" name="table_records">
+                <input type="checkbox" class="flat" name="cb_course" value="{{ $course -> course_id}}">
               </td>
               <td> {{ $course -> course_id }} </td>
               <td> {{ $course -> course_name }} </td>
@@ -153,3 +133,11 @@ Manage Courses
 <!--/page content-->
 
 @endsection
+<script type="text/javascript">
+  $(document).on('click', '#delete_course',function()
+  {
+      var course_id = [];
+
+      if(confirm("Are you sure you want to delete this record?")) 
+  });
+</script>

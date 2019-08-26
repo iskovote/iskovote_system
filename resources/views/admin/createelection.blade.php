@@ -66,8 +66,8 @@ Create Election
 
               <!--STEP 1 Set Election-->
               <div id="step-1">
-                <form class="form-horizontal form-label-left">
-
+                <form class="form-horizontal form-label-left" method="POST" action="/create-election">
+                  {{ csrf_field() }}
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="election_type">Election Type <span class="required">*</span>
                     </label>
@@ -83,9 +83,9 @@ Create Election
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <select id="select_org" class="form-control col-md-3" required="required">
-                      <option id="option_org">BSA</option>
-                      <option>BSIT</option>
-                      <option>BSCpE</option>
+                      @foreach($tbl_orgs as $org)
+                      <option id="option_org">{{ $org -> org_id }}</option>
+                      @endforeach
                     </select>                            
                   </div>
                 </div>
@@ -93,7 +93,7 @@ Create Election
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="election_term">Election Term <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" placeholder="YYYY-YYYY" id="election_term" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text"  data-inputmask="'mask': '9999-9999'" id="election_term" required="required" class="form-control col-md-7 col-xs-12">
                   </div>
                 </div>
                 <div class="form-group">
@@ -144,9 +144,8 @@ Create Election
                   <thead>
                     <tr class="headings">
                       <th class="dark">
-                        <input type="checkbox" id="check-all" class="flat">
                       </th>
-                      <th class="column-title">Position </th>
+                      <th class="column-title">Position</th>
                       <th class="bulk-actions" colspan="2">
                         <a class="antoo" style="color:white; font-weight:500;">Positions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                       </th>
@@ -154,13 +153,14 @@ Create Election
                   </thead>
 
                   <tbody>
+                    @foreach($tbl_positions as $position)
                     <tr>
                       <td>
                         <input type="checkbox" class="flat" name="table_records">
                       </td>
-                      <td>President</td>
+                      <td>{{ $position -> position}}</td>
                     </tr>
-
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -184,7 +184,6 @@ Create Election
               <thead>
                 <tr class="headings">
                   <th class="dark">
-                    <input type="checkbox" id="check-all" class="flat">
                   </th>
                   <th class="column-title">Partylist Name </th>
                   <th class="bulk-actions" colspan="2">
@@ -194,13 +193,14 @@ Create Election
               </thead>
 
               <tbody>
+                @foreach($tbl_partylists as $party)
                 <tr>
                   <td>
                     <input type="checkbox" class="flat" name="table_records">
                   </td>
-                  <td>SULONG Party</td>
+                  <td>{{$party -> party_name}}</td>
                 </tr>
-
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -208,7 +208,7 @@ Create Election
         <!--/datatable-->
       </div>
 
-      <!--STEP 4 Create Ballot-->
+<!--STEP 4 Create Ballot-->
       <div id="step-4">
         <h2 class="StepTitle">Create Ballot</h2>
         <br/><br/><br/>

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Student;
+use App\Course;
+use App\Imports\CsvImport;
+use Excel;
 
 class StudentController extends Controller
 {
@@ -15,7 +19,10 @@ class StudentController extends Controller
     public function index()
     {
         $tbl_students = Student::all();
-        return view('admin.managestudents')->with('tbl_students', $tbl_students);
+        $tbl_courses = Course::all();
+        return view('admin.managestudents')
+            ->with('tbl_students', $tbl_students)
+            ->with('tbl_courses', $tbl_courses);
     }
 
     /**
@@ -45,13 +52,13 @@ class StudentController extends Controller
             'course_id' => 'required',
             'year' => 'required',
             'section' => 'required',
-            'email_add' => 'required'
+            'email_add' => 'required|email'
         ]);
 
         $tbl_students = new Student();
         
         $tbl_students->student_no = $request->input('student_no');
-        $tbl_students->student_pw = $request->input('student_pw');
+        $tbl_students->student_pw = Hash::make($request['student_pw']);
         $tbl_students->lastname = $request->input('lastname');
         $tbl_students->firstname = $request->input('firstname');
         $tbl_students->middlename = $request->input('middlename');
@@ -108,5 +115,11 @@ class StudentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function csv_import()
+    {
+        Excel::import(new CsvImport, request()->file('file'));
+        return back();
     }
 }

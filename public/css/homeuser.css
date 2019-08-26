@@ -1,0 +1,76 @@
+
+/*Dito nag start po*/
+#con.container{
+margin-top: 5%;
+box-shadow: 0 0px 5px rgba(2,0,5,.5);
+position: center;
+margin-left: 50px;
+margin-right: 50px;
+justify-content: center;
+margin: auto;
+margin-bottom: 5%;
+
+}
+
+
+/*Dito po yung sa card*/
+.card:hover{
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}
+  
+
+ label{
+      color: red;
+    }
+    p{
+    	text-align: center;
+    }
+
+
+ .button-8{
+ 
+  border:2px solid #34495e;
+  float:right;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  width: 120px; 
+  height: 30px;
+  float: right;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+ 
+}
+.button-8 a{
+  font-family:arial;
+  font-size:16px;
+  color:#fff;
+  text-decoration:none;
+  transition:all .5s ease;
+  z-index:2;
+  position:relative;
+}
+.eff-8{
+  width:120px;
+  height:30px;
+  border:70px solid #34495e;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:1;
+  box-sizing:border-box;
+
+}
+.button-8:hover .eff-8{
+  border:0px solid #34495e;
+}
+.button-8:hover a{
+  color:#34495e;
+}
+h1{
+  color: black;
+}

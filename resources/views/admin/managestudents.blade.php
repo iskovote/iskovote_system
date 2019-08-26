@@ -19,7 +19,7 @@ Manage Students
     <button class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent" style="float: right;">Delete Student</button>
     <button class="btn btn-primary" data-toggle="modal" data-target="#editStudent"  style="float: right;">Edit Student Info</button>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent" style="float: right;">Add New Student</button>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#importStudent" style="float: right;">Import</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#importStudent" style="float: right;">Import CSV</button>
 
     <!-- Modal (add) -->
     <div id="addStudent" class="modal fade" role="dialog">
@@ -39,7 +39,7 @@ Manage Students
                 <label class="control-label col-md-3">Student Number<span class="required">*</span>
                 </label>
                 <div class="ccol-md-9 col-sm-9 col-xs-12">
-                  <input type="text"  name="student_no" autocomplete="off" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text"  name="student_no" data-inputmask="'mask': '9999-99999-AA-9'" autocomplete="off" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
@@ -53,7 +53,7 @@ Manage Students
                 <label class="control-label col-md-3">First Name <span class="required">*</span>
                 </label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <input type="text" name="firstname"autocomplete="off"  required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" name="firstname" autocomplete="off"  required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
               <div class="form-group">
@@ -66,11 +66,9 @@ Manage Students
                 <label class="control-label col-md-3">Course <span class="required">*</span></label>
                 <div class="col-md-9 col-sm-9 col-xs-12">
                  <select class="form-control" name="course_id">
-                  <option></option>
-                  <option>BSA</option>
-                  <option>BSCpE</option>
-                  <option>BSED-MT</option>
-                  <option>BSIT</option>
+                  @foreach ($tbl_courses as $course)
+                  <option>{{ $course -> course_id }}</option>
+                  @endforeach
                 </select>
                 </div>
               </div>
@@ -78,7 +76,6 @@ Manage Students
               <label class="control-label col-md-3">Year Level <span class="required">*</span></label>
               <div class="col-md-3">
                <select class="form-control" name="year">
-                <option></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -88,7 +85,6 @@ Manage Students
             <label class="control-label col-md-3">Section</label>
             <div class="col-md-3">
              <select class="form-control" name="section">
-              <option></option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -164,19 +160,17 @@ Manage Students
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-md-3">Course</label>
+            <label class="control-label col-md-3">Course<span class="required">*</span></label>
             <div class="col-md-9 col-sm-9 col-xs-12">
              <select class="form-control" id="edit_courses">
-              <option></option>
-              <option>BSA</option>
-              <option>BSCpE</option>
-              <option>BSED-MT</option>
-              <option>BSIT</option>
+              @foreach ($tbl_courses as $course)
+                  <option>{{ $course -> course_id }}</option>
+              @endforeach
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Year Level</label>
+          <label class="control-label col-md-3">Year Level<span class="required">*</span></label>
           <div class="col-md-3">
            <select class="form-control" id="edit_year">
             <option></option>
@@ -207,7 +201,7 @@ Manage Students
 </div>
 
 <div class="modal-footer">
-  <button type="submit" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+  <button type="submit" class="btn btn-primary">Save Changes</button>
   <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
 </div>
 </div>
@@ -215,31 +209,6 @@ Manage Students
 </div>
 </div>
 <!--end of modal for edit student-->
-
-<!-- Modal (delete) -->
-<div id="deleteStudent" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Delete Student?</h4>
-      </div>
-
-      <div class="modal-body">
-        <p> Are you sure you want to delete this Student Record? </p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
-        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!--end of modal for delete student-->
 
 <!-- Modal (import) -->
 <div id="importStudent" class="modal fade" role="dialog">
@@ -253,25 +222,26 @@ Manage Students
 
       <div class="modal-body">
         <p><b><h4>1. Read import instructions</h4></b></p>
-        <p>To get started, <a href="">click here </a>to read the instructions on how to import voters.</p>
+        <p>To get started, <a href="/help" class="btn btn-default btn-xs">Click Here</a>to read the instructions on how to import voters.</p>
         <p><b><h4>2. Download the import template</h4></b></p>
-        <p><a href="">Click here</a> to download the voter import template and add one voter per row. The columns in your spreadsheet must exactly match the import template or the import will fail.</p>
+        <p><a href="" class="btn btn-default btn-xs">Click Here</a> to download the voter import template and add one voter per row. The columns in your spreadsheet must exactly match the import template or the import will fail.</p>
         <p><b><h4>3. Select the import file from your computer</h4></b></p>
-        <p><form class="form-horizontal" action="" method="post" name="uploadCSV"
-    enctype="multipart/form-data">
-    <div class="input-row">
-       <input type="file" name="file" id="file" accept=".csv">
-        <br />
-
-    </div>
-    <div id="labelError"></div>
-</form></p>
+        <p>
+          <form class="form-horizontal" action="{{ route('import') }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="input-row">
+              <input type="file" name="file" id="file" accept=".csv">
+              <br />
+            </div>
+            <div id="labelError"></div>
+        </p>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Import</button>
+        <button type="submit" class="btn btn-danger">Import</button>
         <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
       </div>
+      </form>
     </div>
 
   </div>

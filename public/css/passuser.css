@@ -1,0 +1,56 @@
+.f1{
+     margin: auto;
+     width: 300px;
+     color: #262626;
+     margin-top: 140px;
+}
+.buttonPass-8{
+ 
+  border:2px solid #34495e;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  width: 300px; 
+  height: 30px;
+  margin-top: 5%;
+  margin-left: 1%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  margin-right: -5%;
+
+ 
+}
+.buttonPass-8 a{
+  font-family:arial;
+  font-size:16px;
+  color:#fff;
+  text-decoration:none;
+  transition:all .8s ease;
+  z-index:2;
+  position:relative;
+}
+.effPass-8{
+  width:300px;
+  height:30px;
+  border:70px solid #34495e;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:1;
+  box-sizing:border-box;
+}
+.buttonPass-8:hover .effPass-8{
+  border:0px solid #34495e;
+}
+.buttonPass-8:hover a{
+  color:#34495e;
+}
+
+
+
+
+  
+
+
+

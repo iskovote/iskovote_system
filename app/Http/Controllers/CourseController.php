@@ -86,8 +86,13 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $course_id)
     {
-        //
+        $delets=$request->delete;
+
+        foreach ($delets as $delete) {
+            DB::table('tbl_courses')->where('course_id', $delete)->delete();
+        }
     }
+
 }
