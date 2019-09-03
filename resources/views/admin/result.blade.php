@@ -15,6 +15,13 @@ Result
     </div>
     <div class="clearfix"></div>
 
+    <div>
+    	<button name="btn_printresult" class="btn btn-primary" style="float: right;">Print Results</button>
+    </div>
+
+    <div>
+    	
+    </div>
 
    </div>
  </div>

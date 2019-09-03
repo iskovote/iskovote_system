@@ -6,7 +6,7 @@
 <style type="text/css">
   .bgimg {
   /* The image used */
-  background-image: url("images/loginbg.jpg");
+  background-image: url("{{asset('/images/loginbg.jpg')}}");
 
   /* Full height */
   height: 100%; 
@@ -24,14 +24,14 @@
 <body>
     <div class="bgimg">
       <div class="loginbox">
-        <img src="images/iskovote.png" class="logo">
+        <img src="{{asset('/images/iskovote.png')}}" class="logo">
         <h1 class="login-title">USER LOGIN</h1><br/>
         <form class="login-form" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
             <p>Username</p>
-            <input type="text" name="txtUN" placeholder="Enter Username">
+            <input type="text" name="student_no" autocomplete="off" placeholder="Enter Username">
             <p>Password</p>
-            <input type="password" name="txtPW" placeholder="Enter Password"><br/>
+            <input type="password" name="student_pw" autocomplete="off" placeholder="Enter Password"><br/>
             <button id="btn_userlog" type="submit">Login</button>
             <a href="" style="float: right; color: white;">Forgot Password?</a>
         </form>

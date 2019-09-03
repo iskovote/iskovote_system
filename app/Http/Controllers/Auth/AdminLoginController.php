@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 
-
 class AdminLoginController extends Controller
 {
 
@@ -32,7 +31,7 @@ class AdminLoginController extends Controller
 		if(Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember))
 		{
 			//if true, redirect to dashboard
-			return redirect()->route('admin.dashboard');
+			return redirect()->intended(route('admin.dashboard'));
 		}
 		else
 			//if false, redirect to login

@@ -22,8 +22,12 @@ function SmartWizard(target, options) {
     this.loader = $('<div>Loading</div>').addClass("loader");
     this.buttons = {
         next : $('<a>'+options.labelNext+'</a>').attr("href","#").addClass("buttonNext"),
-        finish  : $('<a>'+options.labelFinish+'</a>').attr("href","#").addClass("buttonFinish"),
-        previous : $('<a>'+options.labelPrevious+'</a>').attr("href","#").addClass("buttonPrevious")
+        previous : $('<a>'+options.labelPrevious+'</a>').attr("href","#").addClass("buttonPrevious"),
+        finish: $('<a>' + options.labelFinish + '</a>').attr({
+        type: 'submit',
+        name: 'buttonFinish',
+        value: 'Submit'
+    }).addClass('buttonFinish')
         
     };
 
@@ -427,6 +431,7 @@ $.fn.smartWizard = function(method) {
         return rv;
     }
 };
+
 
 // Default Properties and Events
 $.fn.smartWizard.defaults = {

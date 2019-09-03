@@ -11,7 +11,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="images/puplogo.png" alt="..." class="img-circle profile_img">
+            <img src="{{asset('images/puplogo.png')}}" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
@@ -27,30 +27,30 @@
           <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
-              <li><a href="/dashboard"><i class="fa fa-home"></i> Dashboard</a>
+              <li><a href="/a/dashboard"><i class="fa fa-home"></i> Dashboard</a>
               </li>
             </ul>
             <h3>Manage</h3>
             <ul class="nav side-menu">
               <li><a href="/manage-courses"><i class="fa fa-book"></i> Courses</a>
               </li>
-              <li><a href="/manage-org"><i class="fa fa-book"></i> Organizations</a>
+              <li><a href="/manage-org"><i class="fa fa-users"></i> Organizations</a>
               </li>
               <li><a href="/manage-students"><i class="fa fa-user"></i> Students</a>
               </li>
               <li><a href="/manage-positions"><i class="fa fa-black-tie"></i> Positions</a>
               </li>
-              <li><a href="/manage-partylists"><i class="fa fa-users"></i> Partylists</a>
+              <li><a href="/manage-partylists"><i class="fa fa-flag"></i> Partylists</a>
               </li>
             </ul>
 
             <h3>Election</h3>
             <ul class="nav side-menu">
-              <li><a href="/create-election"><i class="fa fa-edit"></i> Create Election</a>
+              <li><a href="/create-election"><i class="fa fa-pencil"></i> Create Election</a>
               </li>
               <li><a href="/edit-election"><i class="fa fa-edit"></i> Edit Election</a>
               </li>
-              <li><a href="/election-archive"><i class="fa fa-eye"></i>Election Archive </a>
+              <li><a href="/election-archive"><i class="fa fa-archive"></i>Election Archive </a>
               </li>
             </ul>
           </div>
@@ -70,14 +70,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="">
               <a href="" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="images/puplogo.png" alt="">ADMIN
+                <img src="{{asset('images/puplogo.png')}}" alt="">ADMIN
                 <span class=" fa fa-angle-down"></span>
               </a>
 
               <ul class="dropdown-menu dropdown-usermenu pull-right">
                 <li><a href="">Account</a></li>
                 <li><a href="/help">Help</a></li>
-                <li><a href="/login"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
+                <li><a href="/a/login"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
               </ul>
 
             </li>

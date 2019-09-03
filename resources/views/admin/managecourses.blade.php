@@ -15,7 +15,10 @@ Manage Courses
     <br/><br/>
 
     <!--Buttons(add, edit, delete)-->
-    <button name="delete_course" type="submit" class="btn btn-danger" style="float: right;">Delete Course</button>
+    <form action="" method="post">
+      <input type="submit" name="upvote" value="Delete Course" class="btn btn-danger" style="float:right" />
+    </form>
+    
     <button name="edit_course" data-toggle="modal" data-target="#editCourse" class="btn btn-primary" style="float: right;">Edit Course</button>
     <button name="add_course" data-toggle="modal" data-target="#addCourse" class="btn btn-success" style="float: right;">Add Course</button>
 
@@ -84,7 +87,7 @@ Manage Courses
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
               <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
             </div>
           </form>
@@ -133,11 +136,4 @@ Manage Courses
 <!--/page content-->
 
 @endsection
-<script type="text/javascript">
-  $(document).on('click', '#delete_course',function()
-  {
-      var course_id = [];
 
-      if(confirm("Are you sure you want to delete this record?")) 
-  });
-</script>

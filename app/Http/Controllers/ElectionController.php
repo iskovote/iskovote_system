@@ -49,7 +49,17 @@ class ElectionController extends Controller
     {
         $tbl_elections = new Election();
         
-        $tbl_elections->electionname = $request->input('');
+        $name = $request->input('election_type');
+
+        if ($name = 'Student Council')
+        {
+            $tbl_elections->electionname = Election::select(DB::raw("CONCAT('election_type',' ','term') AS electionname"))->get();
+        }
+        else
+        {
+             $tbl_elections->electionname = Election::select(DB::raw("CONCAT('org',' Election ','term') AS electionname"))->get();
+        }
+
         $tbl_elections->term = $request->input('term');
         $tbl_elections->startdate = $request->input('startdate');
         $tbl_elections->enddate = $request->input('enddate');
@@ -57,6 +67,12 @@ class ElectionController extends Controller
         $tbl_elections->endtime = $request->input('endtime');
 
         $tbl_elections->save();
+
+        $tbl_candidates = new Candidate();
+
+        $tbl_candidates->student_no = $request->input();
+        $tbl_candidates
+
         return redirect('/create-election');
     }
 

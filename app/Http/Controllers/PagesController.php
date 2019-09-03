@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
 
-    public function createelection()
-    {
-    	return view('admin.createelection');
-    }
-
     public function archive()
     {
     	return view('admin.viewelection');

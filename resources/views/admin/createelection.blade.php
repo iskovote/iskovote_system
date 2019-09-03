@@ -23,6 +23,8 @@ Create Election
             <br/>
 
             <!-- Smart Wizard -->
+            <form class="form-horizontal form-label-left" method="POST" action="/create-election">
+                  {{ csrf_field() }}
             <div id="wizard" class="form_wizard wizard_horizontal">
               <ul class="wizard_steps">
                 <li>
@@ -66,13 +68,12 @@ Create Election
 
               <!--STEP 1 Set Election-->
               <div id="step-1">
-                <form class="form-horizontal form-label-left" method="POST" action="/create-election">
-                  {{ csrf_field() }}
+                
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="election_type">Election Type <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <select id="election_type" class="form-control col-md-3" required="required">
+                      <select id="election_type" name="election_type" class="form-control col-md-3" required="required">
                        <option>Student Council Election</option>
                        <option>Organization Election</option>
                      </select>                            
@@ -82,7 +83,7 @@ Create Election
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="election_type">Organization <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
-                    <select id="select_org" class="form-control col-md-3" required="required">
+                    <select id="select_org" name="org" class="form-control col-md-3" required="required">
                       @foreach($tbl_orgs as $org)
                       <option id="option_org">{{ $org -> org_id }}</option>
                       @endforeach
@@ -124,8 +125,6 @@ Create Election
                     <input id="end_time" class="date-picker form-control col-md-7 col-xs-12" required="required" type="time" step="1">
                   </div>
                 </div>
-
-              </form>
             </div>
 
             <!--STEP 2 Select Positions-->                     
@@ -147,7 +146,7 @@ Create Election
                       </th>
                       <th class="column-title">Position</th>
                       <th class="bulk-actions" colspan="2">
-                        <a class="antoo" style="color:white; font-weight:500;">Positions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                        <a class="antoo" style="color:white; font-weight:500;">Positions</a>
                       </th>
                     </tr>
                   </thead>
@@ -187,7 +186,7 @@ Create Election
                   </th>
                   <th class="column-title">Partylist Name </th>
                   <th class="bulk-actions" colspan="2">
-                    <a class="antoo" style="color:white; font-weight:500;">Partylists ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                    <a class="antoo" style="color:white; font-weight:500;">Partylists</a>
                   </th>
                 </tr>
               </thead>
@@ -232,7 +231,7 @@ Create Election
                           <div class="column">
                             <div class="upload-btn-wrapper">
                               <br/>
-                              <img src = "images/userDefault.png" style="display:initial; background-size: cover;" height="220" width="220" id = "pres" border="10">
+                              <img src = "{{asset('/images/userDefault.png')}}" style="display:initial; background-size: cover;" height="220" width="220" id = "pres" border="10">
                               <br/>
                               <button class="btn" style="display: none;">Upload Photo</button>
                               <input type="file" onchange="presImage.call(this)"/>
@@ -276,7 +275,7 @@ Create Election
         <br/>
 </div> 
 </div>
-
+</form>
 <!-- End SmartWizard Content -->
 </div>
 </div>

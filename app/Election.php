@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Election extends Model
 {
-    //
     protected $table = 'tbl_elections';
     protected $fillable = [
     	"electionname",

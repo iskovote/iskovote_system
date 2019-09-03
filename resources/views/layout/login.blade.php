@@ -26,7 +26,7 @@
       <div class="loginbox">
         <img src="{{asset('/images/iskovote.png')}}" class="logo">
         <h1 class="login-title">ADMIN LOGIN</h1><br/>
-        <form class="login-form" method="POST" action="{{ route('dashboard')}}">
+        <form class="login-form" method="POST" action="{{ route('admin.login.submit')}}">
           {{ csrf_field() }}
             <p>Username</p>
             <input class="@error('username') is-invalid @enderror" type="text" autocomplete="off" name="username" placeholder="Enter Username">

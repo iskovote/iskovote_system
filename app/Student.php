@@ -11,7 +11,7 @@ class Student extends Authenticatable
     use Notifiable;
 
     protected $table = 'tbl_students';
-    protected $guard = 'user';
+    protected $guard = 'admin';
     protected $primarykey = 'student_no';
     /**
      * The attributes that are mass assignable.

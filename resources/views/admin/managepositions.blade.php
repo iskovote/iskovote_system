@@ -79,7 +79,7 @@ Manage Positions
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
           <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
         </div>
       </div>

@@ -16,6 +16,12 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __contruct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function index()
     {
         $tbl_students = Student::all();
