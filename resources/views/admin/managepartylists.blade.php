@@ -15,9 +15,14 @@ Manage Partylists
     <br/><br/>
 
     <!--Buttons(add, edit,delete)-->
-    <button id="delete_position" data-toggle="modal" data-target="#deleteParty" class="btn btn-danger" style="float: right;">Delete Partylist</button>
-    <button id="edit_position" data-toggle="modal" data-target="#editParty" class="btn btn-primary" style="float: right;">Edit Partylist</button>
-    <button id="add_position" data-toggle="modal" data-target="#addPartyModal" class="btn btn-success" style="float: right;">Add Partylist</button>
+    <div style="text-align: right;">
+      <button id="add_position" data-toggle="modal" data-target="#addPartyModal" class="btn btn-success">Add Partylist</button>
+      <button id="edit_position" data-toggle="modal" data-target="#editParty" class="btn btn-primary">Edit Partylist</button>
+      <form style="display: inline" method="post" action="">
+        {{csrf_field()}}
+        <button id="delete_position" class="btn btn-danger" >Delete Partylist</button>
+      </form>
+    </div>
 
     <!-- Modal (add) -->
     <div id="addPartyModal" class="modal fade" role="dialog">
@@ -48,8 +53,8 @@ Manage Partylists
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
               <button type="submit" name="btnSaveParty" id="btnSavePos" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
             </div>
           </form>
         </div>

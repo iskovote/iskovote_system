@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Election;
 use App\Org;
 use App\Position;
@@ -22,7 +23,7 @@ class ElectionController extends Controller
         $tbl_positions = Position::all();
         $tbl_partylists = Partylist::all();
 
-        return view('admin.createelection')
+        return view('admin.election')
             ->with('tbl_elections', $tbl_elections)
             ->with('tbl_orgs', $tbl_orgs)
             ->with('tbl_positions', $tbl_positions)
@@ -47,33 +48,44 @@ class ElectionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate( $request , [
+            'election_type' => 'required',
+            'term' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
+
         $tbl_elections = new Election();
         
         $name = $request->input('election_type');
+        $term = $request->input('term');
 
-        if ($name = 'Student Council')
-        {
-            $tbl_elections->electionname = Election::select(DB::raw("CONCAT('election_type',' ','term') AS electionname"))->get();
-        }
-        else
-        {
-             $tbl_elections->electionname = Election::select(DB::raw("CONCAT('org',' Election ','term') AS electionname"))->get();
+        //election name
+        switch($_POST['election_type']){
+        case 'Student Council Election':
+        $ename = $name . " " . $term;
+        break;
+        case 'Organization Election':
+        $ename = $request->input('org') . " Election " . $term;
+        break;
         }
 
-        $tbl_elections->term = $request->input('term');
-        $tbl_elections->startdate = $request->input('startdate');
-        $tbl_elections->enddate = $request->input('enddate');
-        $tbl_elections->starttime = $request->input('starttime');
-        $tbl_elections->endtime = $request->input('endtime');
+        $tbl_elections->electionname = $ename;
+        $tbl_elections->term = $term;
+        $tbl_elections->startdate = $request->input('start_date');
+        $tbl_elections->enddate = $request->input('end_date');
+        $tbl_elections->starttime = $request->input('start_time');
+        $tbl_elections->endtime = $request->input('end_time');
 
         $tbl_elections->save();
 
-        $tbl_candidates = new Candidate();
+        //$tbl_candidates = new Candidate();
 
-        $tbl_candidates->student_no = $request->input();
-        $tbl_candidates
+        //$tbl_candidates->student_no = $request->input();
 
-        return redirect('/create-election');
+        return redirect('/create-election/step2');
     }
 
     /**
@@ -119,5 +131,21 @@ class ElectionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function step2()
+    {
+        $tbl_positions = Position::all();
+
+        return view('admin.election2')
+            ->with('tbl_positions', $tbl_positions);
+    }
+
+    public function step3()
+    {
+        $tbl_partylists = Partylist::all();
+
+        return view('admin.election3')
+            ->with('tbl_partylists', $tbl_partylists);
     }
 }

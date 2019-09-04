@@ -47,6 +47,11 @@ Route::resource('/manage-students', 'StudentController');
 Route::post('/csv_import', 'StudentController@csv_import')->name('import');
 Route::resource('/manage-courses', 'CourseController');
 Route::resource('/manage-positions', 'PositionController');
+//Route::delete('/manage-positions', 'PositionController@destroy')->name('delPos');
+Route::delete('positions', ['as'=>'delPos', 'uses'=>'PositionController@destroy']);
+
 Route::resource('/manage-partylists', 'PartyController');
 Route::resource('/manage-org', 'OrgsController');
 Route::resource('/create-election', 'ElectionController');
+Route::get('/create-election-step2', 'ElectionController@step2');
+Route::get('/create-election-step3', 'ElectionController@step3');

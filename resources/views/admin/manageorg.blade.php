@@ -15,9 +15,14 @@ Manage Organizations
     <br/><br/>
 
     <!--Buttons(add, edit, delete)-->
-    <button id="delete_org" data-toggle="modal" data-target="#deleteOrg" class="btn btn-danger" style="float: right;">Delete </button>
-    <button id="edit_org" data-toggle="modal" data-target="#editOrg" class="btn btn-primary" style="float: right;">Edit </button>
-    <button id="add_org" data-toggle="modal" data-target="#addOrg" class="btn btn-success" style="float: right;">Add </button>
+    <div style="text-align: right;">
+      <button id="add_org" data-toggle="modal" data-target="#addOrg" class="btn btn-success" >Add Org</button>
+      <button id="edit_org" data-toggle="modal" data-target="#editOrg" class="btn btn-primary">Edit Org</button>
+      <form style="display: inline" method="post" action="">
+        {{csrf_field()}}
+        <button id="delete_org" class="btn btn-danger" >Delete Org</button>
+      </form>  
+    </div>
 
     <!-- Modal (add) -->
     <div id="addOrg" class="modal fade" role="dialog">

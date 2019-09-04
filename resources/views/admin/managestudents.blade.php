@@ -16,10 +16,16 @@ Manage Students
 
     <br/><br/>
 
-    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteStudent" style="float: right;">Delete Student</button>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#editStudent"  style="float: right;">Edit Student Info</button>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent" style="float: right;">Add New Student</button>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#importStudent" style="float: right;">Import CSV</button>
+    <!--Buttons(add, edit,delete)-->
+    <div style="text-align: right;">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#importStudent">Import CSV</button>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudent">Add New Student</button>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#editStudent">Edit Student Info</button>
+      <form style="display: inline" method="post" action="">
+        {{csrf_field()}}
+        <button id="delete_student" class="btn btn-danger">Delete Student</button>
+      </form>
+    </div>
 
     <!-- Modal (add) -->
     <div id="addStudent" class="modal fade" role="dialog">
@@ -70,8 +76,8 @@ Manage Students
                   <option>{{ $course -> course_id }}</option>
                   @endforeach
                 </select>
-                </div>
               </div>
+            </div>
             <div class="form-group">
               <label class="control-label col-md-3">Year Level <span class="required">*</span></label>
               <div class="col-md-3">
@@ -165,7 +171,7 @@ Manage Students
             <div class="col-md-9 col-sm-9 col-xs-12">
              <select class="form-control" id="edit_courses">
               @foreach ($tbl_courses as $course)
-                  <option>{{ $course -> course_id }}</option>
+              <option>{{ $course -> course_id }}</option>
               @endforeach
             </select>
           </div>
@@ -235,21 +241,19 @@ Manage Students
               <br />
             </div>
             <div id="labelError"></div>
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Import</button>
-        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
-      </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Import</button>
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+        </div>
       </form>
     </div>
 
   </div>
 </div>
 <!--end of modal for impoort student-->
-
-<br/><br/>
 
 <!--student data table-->
 <div class="x_panel">

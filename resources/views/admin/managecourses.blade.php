@@ -15,12 +15,15 @@ Manage Courses
     <br/><br/>
 
     <!--Buttons(add, edit, delete)-->
-    <form action="" method="post">
-      <input type="submit" name="upvote" value="Delete Course" class="btn btn-danger" style="float:right" />
-    </form>
+    <div style="text-align: right;">
+      <button name="add_course" data-toggle="modal" data-target="#addCourse" class="btn btn-success" style="float: right;">Add Course</button>
+      <button name="edit_course" data-toggle="modal" data-target="#editCourse" class="btn btn-primary" style="float: right;">Edit Course</button>
+      <form style="display: inline" method="post" action="">
+        {{csrf_field()}}
+        <button id="delete_courses" class="btn btn-danger">Delete Course</button>
+      </form>
+    </div>
     
-    <button name="edit_course" data-toggle="modal" data-target="#editCourse" class="btn btn-primary" style="float: right;">Edit Course</button>
-    <button name="add_course" data-toggle="modal" data-target="#addCourse" class="btn btn-success" style="float: right;">Add Course</button>
 
 
     <!-- Modal (add) -->

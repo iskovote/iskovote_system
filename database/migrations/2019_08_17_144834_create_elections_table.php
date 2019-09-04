@@ -15,7 +15,7 @@ class CreateElectionsTable extends Migration
     {
         Schema::create('tbl_elections', function (Blueprint $table) {
             $table->Increments('election_id', 10);
-            $table->string('electioname', 100);
+            $table->string('electionname', 100);
             $table->string('term',9);
             $table->date('startdate');
             $table->time('starttime');
