@@ -54,4 +54,6 @@ Route::resource('/manage-partylists', 'PartyController');
 Route::resource('/manage-org', 'OrgsController');
 Route::resource('/create-election', 'ElectionController');
 Route::get('/create-election-step2', 'ElectionController@step2');
+Route::post('/create-election-step2', 'ElectionController@savePos')->name('election.positions');
 Route::get('/create-election-step3', 'ElectionController@step3');
+Route::get('/create-election-step4', 'ElectionController@step4');

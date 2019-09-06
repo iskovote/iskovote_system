@@ -1139,10 +1139,11 @@ h2 {
     border-bottom: 1px solid #efefef
 }
 .accordion .panel-heading {
-    background: #F2F5F7;
+    background: #34495E;
     padding: 13px;
     width: 100%;
-    display: block
+    display: block;
+    color: white
 }
 .accordion .panel:hover {
     background: #F2F5F7

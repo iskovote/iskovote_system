@@ -16,6 +16,15 @@ Election Archive
 
             <br/><br/>
 
+            <form class="form-horizontal form-label-left" style="text-align: right; size: 20px">
+            <div>
+              <select>
+                <option>2018-2019</option>
+                <option>2019-2020</option>
+              </select>
+            </div>
+            </form>
+
             <!--Card-->
             <div class="x_panel">
               <div class="card" style="width: 100%;">

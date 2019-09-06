@@ -24,7 +24,7 @@ Create Election
           </div>
           <div class="x_content">
             <p>Please select the positions that will be included in your election</p>
-            <form id="election-step2" class="form-horizontal form-label-left" method="" action="">
+            <form id="election-step2" class="form-horizontal form-label-left" method="" action="{{ route('election.positions')}}">
               {{ csrf_field() }}
               <!--position data table-->
               <div class="x_panel">

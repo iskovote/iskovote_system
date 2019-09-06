@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Election;
 use App\Org;
 use App\Position;
@@ -85,7 +84,7 @@ class ElectionController extends Controller
 
         //$tbl_candidates->student_no = $request->input();
 
-        return redirect('/create-election/step2');
+        return redirect('/create-election-step2');
     }
 
     /**
@@ -141,6 +140,11 @@ class ElectionController extends Controller
             ->with('tbl_positions', $tbl_positions);
     }
 
+    public function savePos()
+    {
+        return redirect('/create-election-step3');
+    }
+
     public function step3()
     {
         $tbl_partylists = Partylist::all();
@@ -148,4 +152,14 @@ class ElectionController extends Controller
         return view('admin.election3')
             ->with('tbl_partylists', $tbl_partylists);
     }
+
+    public function step4()
+    {
+        $tbl_partylists = Partylist::all();
+
+        return view('admin.election4')
+            ->with('tbl_partylists', $tbl_partylists);
+    }
+
+
 }
